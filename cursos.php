@@ -10,17 +10,15 @@ $cursos = lerTodosOsCursos($conexao);
 <?php foreach($cursos as $curso){?>
   <div class="col mb-4">
   <div class="card border-dark">
-  <div class="tamanho">
-    <img src="./oneup/imagem/<?=$curso['imagem']?>" class="card-img-top" alt=""><a href="curso-detalhe.php">
+  <a href="curso-detalhe.php?id=<?=$curso['id']?>">
+    <img src="./oneup/imagem/<?=$curso['imagem']?>" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title"><?=$curso['nome']?></h5>
       <p class="card-texte"><?=$curso['descricao']?></p>
       </a>
     </div>
     </div>
-    </div>
   </div>
-
 <?php }?>
 </div>  
 </div>

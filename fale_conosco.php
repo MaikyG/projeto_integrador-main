@@ -1,8 +1,8 @@
 <?php
 require "cabecalho.php"
 ?>
-<main>
-        <article class="conteudo limitador">
+<main class="container">
+        <article>
 
             <h2>Contato</h2>
     
@@ -10,79 +10,59 @@ require "cabecalho.php"
 
             
             <form id="my-form" action="" method="post">
-
-                <div>
+<div class="">
+                <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input placeholder="nome" type="text" name="" id="nome" required>
+                    <input class="form-control" placeholder="nome" type="text" name="nome" id="nome" required>
                 </div>
 
-                <div>
+                <div class="form-group" >
                     <label for="email">E-mail:</label>
-                    <input placeholder="email" type="email" name="" id="email" required>
+                    <input class="form-control" placeholder="email" type="email" name="" id="email" required>
                 </div>
+              
 
-                <div>
+                <div class="form-group" >
                     <label for="data">Data de nascimento:</label>
-                    <input type="date" name="data" id="data" required>
+                    <input class="form-control" type="date" name="data" id="data" required>
                 </div>
 
-                <div>
+                <div class="form-group ">
                     <label for="telefone">Telefone:</label>
-                    <input placeholder="telefone" type="tel" name="telefone" id="telefone">
+                    <input class="form-control" placeholder="telefone" type="tel" name="telefone" id="telefone">
                 </div>
 
-                <div>
+                <div class="form-group ">
                     <label for="idade">Idade:</label>
-                    <input placeholder="idade" type="number" name="idade" id="idade" min="18" max="100" required>
-                </div>
-
-                <div>
-                    <p>Sexo:</p>
-                    <input value="Masculino" type="radio" name="sexo" id="masculimo">
-                    <label for="masculimo">Masculimo</label>
-
-                    <input value="Feminino" type="radio" name="sexo" id="feminino">
-                    <label for="feminino">Feminino</label>
-                </div>
-
-                <div>
-                    <p>Interesses</p>
-                    <input value="Desing" type="checkbox" name="interesses" id="desing">
-                    <label for="desing">Desing</label>
-
-                    <input value="Robotica" type="checkbox" name="interesses" id="robotica">
-                    <label for="robotica">Robotica</label>
-
-                    <input value="Programação" type="checkbox" name="interesses" id="programacao">
-                    <label for="programacao">Programação</label>
+                    <input class="form-control" placeholder="idade" type="number" name="idade" id="idade" min="18" max="100" required>
                 </div>
 
                 <!-- INÍCIO HTML PARA CEP/ENDEREÇO -->
-                <div>
+                <div class="form-group ">
                     <label for="cep">CEP:</label>
-                    <input type="text" id="cep" name="cep" maxlength="9" required>
-                    <button id="localizar-cep">Localizar</button>
+                    <input class="form-control" type="text" id="cep" name="cep" maxlength="9" required>
+                    <button class="btn btn-primary"  id=localizar-cep">Localizar</button>
                     <b id="status"></b>
                 </div>
-                <div>
+                <div class="form-group ">
                     <label for="endereco">Endereço:</label>
-                    <input type="text" id="endereco" name="endereco" size="30">
+                    <input class="form-control" type="text" id="endereco" name="endereco" size="30">
                 </div>
-                <div>
+                <div class="form-group ">
                     <label for="bairro">Bairro:</label>
-                    <input type="text" id="bairro" name="bairro">
+                    <input class="form-control" type="text" id="bairro" name="bairro">
                 </div>
-                <div>
+                <div class="form-group ">
                     <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade">
+                    <input class="form-control" type="text" id="cidade" name="cidade">
                 </div>
-                <div>
+                <div class="form-group ">
                     <label for="estado">Estado:</label>
-                    <input type="text" id="estado" name="estado">
+                    <input class="form-control" type="text" id="estado" name="estado">
                 </div>
                 <!-- /FIM HTML PARA CEP/ENDEREÇO -->
 
-                <div>
+                <div class="form-group">
                     <label for="assunto">Assunto:</label>
                     <select name="" id="">
                         <option></option>
@@ -94,16 +74,15 @@ require "cabecalho.php"
                     
                 </div>
 
-                <div>
+                <div class="form-group">
                     <label for="mensagem">Mensagem: 
-                        <span id="maximo"> (restam <b id="caracteres">100</b> caracteres)</span>
                     </label> <br>
-                    <textarea  maxlength="100" placeholder="mensagem" name="mensagem" id="mensagem" cols="20" rows="5"></textarea>
+                    <textarea class="form-control"  maxlength="100" placeholder="mensagem" name="mensagem" id="mensagem" cols="20" rows="20"></textarea>
                 </div>
 
-                <button type="submit">Enviar dados</button>
+                <button class="btn btn-primary" type="submit">Enviar dados</button>
                 <p id="my-form-status"></p>
-
+</div>
             </form>
 
         </article>
