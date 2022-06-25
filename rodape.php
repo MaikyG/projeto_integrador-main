@@ -31,7 +31,7 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="https://kit.fontawesome.com/149beaecf9.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    <script src="js/cursos.js"></script>
+   
     
 </body>
 </html>
