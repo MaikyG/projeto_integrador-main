@@ -24,15 +24,15 @@ function lerCursos(mysqli $conexao):array {
 // atualizar curso parte 1
 function lerUmCurso(mysqli $conexao, int $idCurso):array { 
 
-    $sql = "SELECT nome, descricao, quantidade, resumo, imagem FROM cursos WHERE id = $idCurso";
+    $sql = "SELECT nome, descricao, quantidade, resumo, imagem, resumo FROM cursos WHERE id = $idCurso";
 
 	$resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
     return mysqli_fetch_assoc($resultado); 
 } 
 
 //atualiza curso parte 2
-function atualizarPost(mysqli $conexao, int $idCurso, string $nome, string $descricao, string $resumo, int $quantidade, string $imagem){
-    $sql = "UPDATE cursos SET nome = '$nome', descricao = '$descricao', quantidade = '$quantidade', resumo = '$resumo', imagem = '$imagem' WHERE id = $idCurso";
+function atualizarPost(mysqli $conexao, int $idCurso, string $nome, string $descricao, int $quantidade, string $imagem, string $resumo){
+    $sql = "UPDATE cursos SET nome = '$nome', descricao = '$descricao', quantidade = '$quantidade', resumo = '$resumo', imagem = '$imagem' resumo = '$resumo' WHERE id = $idCurso";
     mysqli_query($conexao, $sql) or die(mysqli_error($conexao));       
 }
 
@@ -68,7 +68,7 @@ function upload($arquivo){
 }
 
 function lerTodosOsCursos(mysqli $conexao):array {
-    $sql = "SELECT id, nome, descricao, quantidade, imagem FROM cursos";
+    $sql = "SELECT id, nome, descricao, quantidade, imagem, resumo FROM cursos";
     
     $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
     $cursos = [];
@@ -79,8 +79,17 @@ function lerTodosOsCursos(mysqli $conexao):array {
 } 
 
 function lerDetalhes(mysqli $conexao, int $idCurso):array {    
-    $sql = "SELECT cursos.id, cursos.nome, cursos.descricao, cursos.quantidade, cursos.imagem FROM cursos WHERE cursos.id = $idCurso";
+    $sql = "SELECT cursos.id, cursos.nome, cursos.descricao, cursos.quantidade, cursos.imagem, cursos.resumo FROM cursos WHERE cursos.id = $idCurso";
     $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
     return mysqli_fetch_assoc($resultado); 
 }
 
+function busca (mysqli $conexao, string $palavra):array {
+    $sql = "SELECT id, nome, descricao, imagem, resumo FROM cursos WHERE nome LIKE '%$palavra%' or descricao LIKE '%$palavra%' or resumo LIKE '%$palavra%' ORDER BY nome DESC";
+    $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
+    $cursos = [];
+    while ($curso = mysqli_fetch_assoc($resultado)){
+        array_push($cursos,$curso);
+    }
+    return $cursos;
+}

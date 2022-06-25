@@ -18,7 +18,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
-<body class="corpinhoSexy">
+
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
 
@@ -55,9 +55,9 @@ $pagina = basename($_SERVER['PHP_SELF']);
             </li>
             <?php } ?>
         </ul>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" action="pesquisa.php" method="get" role="search">
+            <input class="form-control me-2" type="search" placeholder="pesquisa" aria-label="Search" name="q">
+            <button class="btn btn-outline-success" type="submit">pesquisa</button>
         </form>
         </div>
     </div>
