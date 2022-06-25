@@ -20,31 +20,39 @@ $pagina = basename($_SERVER['PHP_SELF']);
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">Navbar</a>
+        <a class="navbar-brand" href="./index.php">Oneup</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cursos.php">Cursos</a>
+                <a class="nav-link" href="./cursos.php">Cursos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
+                <a class="nav-link" href="./perfil.php">Perfil</a>
             </li>
-            
             <li class="nav-item">
-                <a class="nav-link" href="login.php">Log In</a>
+                <a class="nav-link" href="admin/area_adm.php">Área Admnistrativa</a>
             </li>
+            <?php if(!isset($_SESSION['id'])) {?>
 
             <li class="nav-item">
-                <a class="nav-link" href="login.php">Sair</a>
+                <a class="nav-link" href="login.php">Login</a>
             </li>
+
+            <?php } ?>
+
+            <?php if(isset($sessionId)) { ?>
+            <li class="nav-item">
+                <a class="nav-link" href="?sair"><?=$sessionId?></a>
+            </li>
+            <?php } ?>
         </ul>
-        <form class="d-flex btns-group" role="search">
+        <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>

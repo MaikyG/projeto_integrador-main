@@ -11,6 +11,7 @@ $curso = lerUmCurso($conexao, $idCurso);
 if(isset($_POST['atualizar'])){
   $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
   $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
+  $resumo = filter_input(INPUT_POST, 'resumo', FILTER_SANITIZE_SPECIAL_CHARS);
   $quantidade = filter_input(INPUT_POST, 'quantidade', FILTER_SANITIZE_NUMBER_INT);
 
   //LÓGICA  DE ATUALIZAÇÃO DA FOTO
@@ -20,17 +21,16 @@ if(isset($_POST['atualizar'])){
     $imagem = $_POST['imagem-existente'];
   } else {
   //Senão, pegue a referência (nome e extensão) da nova imagem e faça o processo de upload para o servidor
-    $imagem = $_FILES['imagem']['name'];
-    upload($_FILES['imagem']);
+    $imagem = $_FILES['imagem'];
+    upload($imagem);
   }
   //Somente depois do processo de upload (se necessário), chamaremos a função atualizaPost
-  atualizarPost($conexao, $idCurso, $nome, $descricao, $quantidade, $imagem);
+  atualizarPost($conexao, $idCurso, $nome, $descricao, $resumo, $quantidade, $imagem['name']);
 
   header("location:cursos_lista.php");
 }
 
 ?>
-       
 <div class="row">
   <article class="col-12 bg-white rounded shadow my-1 py-4">
     <h2 class="text-center">Atualizar Curso</h2>
@@ -45,6 +45,11 @@ if(isset($_POST['atualizar'])){
       <div class="form-group">
         <label for="descricao">Descrição:</label>
         <textarea class="form-control" name="descricao" id="descricao" cols="50" rows="10" required><?=$curso['descricao']?></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="resumo">Resumo:</label>
+        <textarea class="form-control" name="resumo" id="resumo" cols="50" rows="7" maxlength="80" required><?=$curso['resumo']?></textarea>
       </div>
       
       <div class="form-group">
@@ -68,7 +73,3 @@ if(isset($_POST['atualizar'])){
       
   </article>
 </div>
-
-<?php
-require "./rodape.php"; 
-?>

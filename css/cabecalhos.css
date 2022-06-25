@@ -9,6 +9,10 @@ html, ul {
     color: black !important;
 }
 
+.navbar-nav .nav-link {
+    padding: 0 1rem !important;
+}
+
 .btns-group .btn:hover {
     color: white !important;
 }

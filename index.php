@@ -22,9 +22,9 @@ $cursos = lerTodosOsCursos($conexao);
         <section id="courses-slider">
             <?php foreach($cursos as $curso) { ?>
             <div class="slide-carousel-item">
-                <img src="./imagem/<?=$curso['imagem']?>" class="d-block w-100" alt="...">
+                <img src="./oneup/imagem/<?=$curso['imagem']?>" class="d-block w-100" alt="...">
                 <h1><?=$curso['nome']?></h1>
-                <p> <?= $curso['descricao'] ?> </p>
+                <p class="resumo"> <?= $curso['descricao'] ?> </p>
                 <p class="link"><a href="cadastro.php">Inscreva-se agora</a></p>
             </div>
             <?php } ?>

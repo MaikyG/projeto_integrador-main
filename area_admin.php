@@ -1,1 +1,0 @@
-<?php require "cabecalho.php"?>

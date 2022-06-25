@@ -104,20 +104,26 @@ body {
 }
 
 .slide-carousel-item {
-    padding: 0 1rem;
+    background-color: var(--bs-gray-100);
+    padding: 1rem 1rem;
     border: 1px solid rgba(0, 0, 0, 0.274);
     border-radius: 10px;
 }
 
+.slide-carousel-item img {
+    border-radius: 10px;
+}
+
 .slide-carousel-item h1 {
+    padding: 2rem 0 0;
     font-weight: bolder;
     text-align: center;
 }
 
-.slide-carousel-item p {
+.slide-carousel-item .resumo {
+    padding: .5rem 2rem 2rem;
     opacity: 80%;
-    text-align: center;
-
+    text-align: left;
 }
 
 .link {

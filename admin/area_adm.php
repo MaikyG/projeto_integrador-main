@@ -2,12 +2,12 @@
 require "../inc/cabecalho-admin.php";
 $idUsuarioLogado = $_SESSION['id'];
 $tipoUsuarioLogado = $_SESSION['tipo'];
-
+$nomeUsuarioLogado = $_SESSION['tipo']
 ?>
 <br>
 <main>
     <div id="admin-options" class="bg-dark mx-5">
-        <div id="options-container" class="d-flex justify-content-between align-items-start flex-column p-5">
+        <div id="options-container" class="d-flex justify-content-between align-items-center flex-column p-5">
             <h1 class="hello">Olá, <b><?= $_SESSION['nome'] ?></b></h1>
 
             <div id="options-group">
