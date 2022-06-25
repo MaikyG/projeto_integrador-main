@@ -2,15 +2,15 @@
 require "conexao.php";
 
 /* inserir curso */
-function inserirCurso(mysqli $conexao, string $nome, string $descricao, int $quantidade, string $imagem){
-    $sql = "INSERT INTO cursos(nome, descricao, quantidade, imagem) VALUES('$nome', '$descricao', '$quantidade', '$imagem')";
+function inserirCurso(mysqli $conexao, string $nome, string $descricao, int $quantidade, string $imagem, string $resumo){
+    $sql = "INSERT INTO cursos(nome, descricao, quantidade, imagem, resumo) VALUES('$nome', '$descricao', '$quantidade', '$imagem', '$resumo')";
     
     mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
 } 
 
 /* função ler cursos */
 function lerCursos(mysqli $conexao):array {
-    $sql = "SELECT id, nome, descricao, quantidade, imagem FROM cursos";
+    $sql = "SELECT id, nome, descricao, quantidade, imagem, resumo FROM cursos";
     $resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
     $cursos = [];
     while($curso = mysqli_fetch_assoc($resultado)){
@@ -21,7 +21,7 @@ function lerCursos(mysqli $conexao):array {
 
 // atualizar curso parte 1
 function lerUmCurso(mysqli $conexao, int $idCurso):array { 
-    $sql = "SELECT nome, descricao, quantidade, imagem FROM cursos WHERE id = $idCurso";
+    $sql = "SELECT nome, descricao, quantidade, imagem, resumo FROM cursos WHERE id = $idCurso";
 	$resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
     return mysqli_fetch_assoc($resultado); 
 } 

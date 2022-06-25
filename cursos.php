@@ -4,21 +4,25 @@ require "inc/funcoes_cursos.php";
 $cursos = lerTodosOsCursos($conexao);
 ?>
 
-<div class="row my-1 mx-md-n1">
+<main class="container">
 
+<div id="aqui" class="row row-cols-3 row-cols-md-3">
 <?php foreach($cursos as $curso){?>
-
-  <div class="col-md-6 my-1 px-md-1">
-    <article class="card shadow-sm h-100">
-      <a href="curso-detalhe.php?id=<?=$curso['id']?>" class="card-link">
-        <img class="card-img-top" src="imagem/<?=$curso['imagem']?>" alt="Imagem de destaque do curso">
-        <div class="card-body">
-          <h5 class="card-title"><?=$curso['nome']?></h5>
-          <p class="card-text">Ver mais...</p>
-          <p><?=$curso['quantidade']?> vagas disponíveis</p>
-        </div>
+  <div class="col mb-4">
+  <div class="card border-dark">
+  <div class="tamanho">
+    <img src="./imagem/<?=$curso['imagem']?>" class="card-img-top" alt=""><a href="curso-detalhe.php">
+    <div class="card-body">
+      <h5 class="card-title"><?=$curso['nome']?></h5>
+      <p class="card-texte"><?=$curso['descricao']?></p>
       </a>
-    </article>
+    </div>
+    </div>
+    </div>
   </div>
+
 <?php }?>
+</div>  
+</div>
+</main>
 <?php require "rodape.php" ?>

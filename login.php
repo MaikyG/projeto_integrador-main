@@ -61,7 +61,7 @@ if(isset($_POST['entrar'])){
             </p>
             
             <p> 
-              <button class="btn btn-primary btn-lg" name="entrar" type="submit"></button>
+              <button class="btn btn-primary btn-lg" name="entrar" type="submit">entra</button>
             </p>
             
             <p class="link">

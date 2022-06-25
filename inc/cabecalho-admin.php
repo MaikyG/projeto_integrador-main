@@ -9,6 +9,7 @@ if(isset($_GET['sair'])){
 
 // Guardando o nome da página atual
 $pagina = basename($_SERVER['PHP_SELF']);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,7 +35,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav nav-bar-dark navng-dark me-auto mb-2 mb-lg-0">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
             </li>
@@ -46,6 +47,10 @@ $pagina = basename($_SERVER['PHP_SELF']);
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login.php">Log In</a>
+            </li>
+
+            <li>
+                <a class="nav-item" href="/admin/area_adm.php"></a>
             </li>
 
             <li class="nav-item">

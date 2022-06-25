@@ -47,7 +47,7 @@ $cursos = lerTodosOsCursos($conexao);
     </section>
 
 </main>
-    <hr>
+    
 
 <?php
  require "rodape.php"

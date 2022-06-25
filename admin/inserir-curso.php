@@ -5,6 +5,7 @@ require "../inc/funcoes_cursos.php";
 if(isset($_POST['inserir'])){
   $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
   $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
+  $resumo = filter_input(INPUT_POST, 'resumo', FILTER_SANITIZE_SPECIAL_CHARS);
   $quantidade = filter_input(INPUT_POST, 'quantidade', FILTER_SANITIZE_SPECIAL_CHARS);
 
   //UPLOAD DE IMAGEM
@@ -17,7 +18,7 @@ if(isset($_POST['inserir'])){
   upload($imagem);
 
   //Função inserir post
-  inserirCurso($conexao, $nome, $descricao, $quantidade, $imagem['name']);
+  inserirCurso($conexao, $nome, $descricao, $quantidade, $imagem['name'], $resumo);
 
   header("location:cursos_lista.php");
 }
@@ -37,6 +38,11 @@ if(isset($_POST['inserir'])){
         <div class="form-group">
           <label for="texto">Descrição:</label>
           <textarea class="form-control" required name="descricao" id="descricao" cols="50" rows="10"></textarea>
+        </div>
+
+        <div class="form-gruop">
+          <label for="resumo" class="form-label">Resumo:</label>
+          <textarea class="form-control" name="resumo" id="resumo" cols="30" rows="10"></textarea>
         </div>
 
         <div>

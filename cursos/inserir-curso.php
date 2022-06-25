@@ -1,4 +1,4 @@
-<?php
+ <?php
  require "cabecalho.php";
  require "inc/funcoes_cursos.php";
 
@@ -53,4 +53,4 @@
     </article>
   </div>
 
-  <?php require "rodape.php" ?>
+  <?php require "rodape.php" ?> 
