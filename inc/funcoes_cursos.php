@@ -2,8 +2,10 @@
 require "conexao.php";
 
 /* inserir curso */
+
 function inserirCurso(mysqli $conexao, string $nome, string $descricao, int $quantidade, string $imagem, string $resumo){
     $sql = "INSERT INTO cursos(nome, descricao, quantidade, imagem, resumo) VALUES('$nome', '$descricao', '$quantidade', '$imagem', '$resumo')";
+
     
     mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
 } 
@@ -21,14 +23,16 @@ function lerCursos(mysqli $conexao):array {
 
 // atualizar curso parte 1
 function lerUmCurso(mysqli $conexao, int $idCurso):array { 
-    $sql = "SELECT nome, descricao, quantidade, imagem, resumo FROM cursos WHERE id = $idCurso";
+
+    $sql = "SELECT nome, descricao, quantidade, resumo, imagem FROM cursos WHERE id = $idCurso";
+
 	$resultado = mysqli_query($conexao, $sql) or die(mysqli_error($conexao));
     return mysqli_fetch_assoc($resultado); 
 } 
 
 //atualiza curso parte 2
-function atualizarPost(mysqli $conexao, int $idCurso, string $nome, string $descricao, int $quantidade, string $imagem){
-    $sql = "UPDATE cursos SET nome = '$nome', descricao = '$descricao', quantidade = '$quantidade', imagem = '$imagem' WHERE id = $idCurso";
+function atualizarPost(mysqli $conexao, int $idCurso, string $nome, string $descricao, string $resumo, int $quantidade, string $imagem){
+    $sql = "UPDATE cursos SET nome = '$nome', descricao = '$descricao', quantidade = '$quantidade', resumo = '$resumo', imagem = '$imagem' WHERE id = $idCurso";
     mysqli_query($conexao, $sql) or die(mysqli_error($conexao));       
 }
 
@@ -49,18 +53,17 @@ function upload($arquivo){
     }
 
     //Acessando apenas o nome do arquivo
-    $nome = $arquivo['type']; //$_FILES['arquivo']['name']
+    $nome = $arquivo['name']; //$_FILES['arquivo']['name']
 
     //Acessando dados de acesso temporário ao arquivo
     $temporario = $arquivo['tmp_name'];
 
     //Pasta de destino do arquivo que está sendo enviado
-    $destino = "imagem/$nome";
+    $destino = "../oneup/imagem/$nome";
 
     //Se o processo de envio temporario para destino for feito com sucesso, então a fnção retorna verdadeiro (indicando o sucesso do processo)
     if(move_uploaded_file($temporario, $destino) ){
         return true;
-
     }
 }
 

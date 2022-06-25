@@ -1,4 +1,4 @@
-const slides = $('.slide-carousel-item').length
+let slides = $('.slide-carousel-item').length
 if(slides == 1) {
   slides = 1
 } else if (slides == 2) {

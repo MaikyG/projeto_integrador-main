@@ -52,16 +52,17 @@ if(isset($_POST['entrar'])){
             
             <p> 
               <label for="email">E-mail:</label>
-              <input id="nome_login" name="email" type="email" placeholder="Digite seu e-mail"/>
+              <input id="nome_login" name="email" required type="email" placeholder="Digite seu e-mail"/>
             </p>
             
             <p> 
               <label for="senha">Senha:</label>
-              <input id="email_login" name="senha" type="password" placeholder="Digite sua senha" /> 
+              <input id="email_login" name="senha" required type="password" placeholder="Digite sua senha" /> 
             </p>
             
-            <p> 
+            <p>
               <button class="btn btn-primary btn-lg" name="entrar" type="submit">entra</button>
+
             </p>
             
             <p class="link">
@@ -74,3 +75,13 @@ if(isset($_POST['entrar'])){
     </main>
 
 </div>
+
+<script>
+$(document).ready(function(){
+setInterval(function(){cache_clear()},3000);
+});
+function cache_clear()
+{
+window.location.reload(true);
+}
+</script>
