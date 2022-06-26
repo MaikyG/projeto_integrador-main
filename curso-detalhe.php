@@ -6,16 +6,24 @@ $cursos = lerDetalhes($conexao, $idCurso);
 
 ?>
 
-<div class="back">
-	<article >
-		<h2 class=""><?=$cursos['nome']?></h2>
-		<img  src="./oneup/imagem/<?=$cursos['imagem']?>" class="rounded img-fluid img-thumbnail " alt="Imagem de destaque do curso" >
-	<</div>
-		<h3>descrição</h3>
+<main class="container-fluid" >
+	<div class="background">
+	<article>
+		<div>
+		<h2 class="nomeCursoD" ><?=$cursos['nome']?></h2>
+		</div>
+		<div class="text-center ">
+		<img class="imagemCurso img-fluid " src="./oneup/imagem/<?=$cursos['imagem']?>" alt="Imagem de destaque do curso">
+		</div>
+		</div>
+		<h2>Descrição Sobre o Curso</h2>
 		<p><?=nl2br($cursos['descricao'])?></p>
-		<h3>resumo</h3>
+		<h2>Resumo Sobre o Curso</h2>
 		<p><?=($cursos['resumo'])?></p>
 		<h3>Vagas</h3>
 		<p> vagas disponíveis <?=$cursos['quantidade']?></p>
+
+		<button class="btn btn-primary" name="inscrever" >Inscrever-se no Curso</button>
 	</article>
+</main>
 <?php require "rodape.php"?>
