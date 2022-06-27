@@ -17,7 +17,7 @@ if(isset($_POST["enviar"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <header></header>
@@ -46,7 +46,7 @@ if(isset($_POST["enviar"])){
               <label for="tipo">Tipo:</label>
               <select class="custom-select" name="tipo" id="tipo" required>
                 <option value=""></option>
-                <option value="editor">Aluno</option>
+                <option value="aluno">Aluno</option>
                 <option value="admin">Administrador</option>
               </select>
             </p>

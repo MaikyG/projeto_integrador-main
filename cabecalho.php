@@ -13,6 +13,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="css/cabecalhos.css">
     <link rel="stylesheet" href="css/rodape.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pefil.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/cursos.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -34,9 +35,6 @@ $pagina = basename($_SERVER['PHP_SELF']);
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./cursos.php">Cursos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./perfil.php">Perfil</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="admin/area_adm.php">Área Admnistrativa</a>
